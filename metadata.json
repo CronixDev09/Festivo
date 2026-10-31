@@ -1,0 +1,6 @@
+{
+  "name": "Festivo AI",
+  "description": "AI-Powered Event Planning Platform for Celebrations: Weddings, Birthdays, Anniversaries, College Fests, Corporate & Cultural Events.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

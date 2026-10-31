@@ -1,0 +1,1352 @@
+# FESTIVO AI
+
+## Complete Product Requirements Document and Development Instructions
+
+Version: 2.0
+Project Status: Full MVP Implementation
+Development Environment: Google Antigravity
+Framework: Next.js + TypeScript
+AI Provider: Google Gemini API
+
+---
+
+# 1. CRITICAL DEVELOPMENT INSTRUCTION
+
+Build a complete, functional, production-quality web application called Festivo AI.
+
+DO NOT build:
+
+* A static website.
+* A frontend-only prototype.
+* A landing page with nonfunctional buttons.
+* A collection of disconnected UI screens.
+* A fake dashboard containing hardcoded statistics.
+* A mock AI chatbot.
+* A design-only demonstration.
+* An MCP-based application.
+* A database-dependent application.
+
+Build a complete working full-stack Next.js application.
+
+Every major button, navigation item, form, dialog, and feature must work.
+
+The application must support actual event creation, AI generation, editing, budgeting, task management, vendor management, guest management, and local data persistence.
+
+Use Google Gemini API for AI functionality.
+
+The application must work with only ONE external API credential:
+
+GEMINI_API_KEY
+
+Do not require:
+
+* OpenAI API keys.
+* Anthropic API keys.
+* Supabase credentials.
+* Firebase credentials.
+* Database credentials.
+* Cloudinary credentials.
+* Third-party AI services.
+* MCP servers.
+* External business APIs.
+* External authentication services.
+
+The application must remain useful even when the Gemini API key is not configured. Non-AI features must continue working.
+
+If the existing project contains broken CSS, broken dependencies, or incomplete implementations, inspect and repair them before adding features.
+
+Do not simply create new components while leaving existing errors unresolved.
+
+---
+
+# 2. PRODUCT OVERVIEW
+
+Product Name: Festivo AI
+
+Tagline: Your Celebration, Planned Smarter.
+
+Product Description:
+
+Festivo AI is an AI-powered event planning platform designed primarily for Indian users.
+
+It helps users organize weddings, birthdays, anniversaries, college festivals, corporate events, and community celebrations.
+
+Users enter their event information and budget. Gemini generates a personalized planning strategy containing:
+
+* Event overview.
+* Budget allocation.
+* Preparation timeline.
+* Task checklist.
+* Vendor categories.
+* Decoration ideas.
+* Food suggestions.
+* Guest planning.
+* Event-day schedule.
+* Personalized recommendations.
+
+Users can subsequently manage their events through an interactive dashboard and an AI chat assistant.
+
+The entire application must be responsive and functional on desktop, tablet, and mobile devices.
+
+# 3. TARGET USERS
+
+Primary market: India.
+
+Supported currency: Indian Rupee (INR).
+
+Use the Indian number formatting system.
+
+Examples:
+
+* ₹1,000
+* ₹25,000
+* ₹1,50,000
+* ₹10,00,000
+
+Support Indian event traditions and preferences without assuming every user follows the same customs.
+
+Users should be able to specify:
+
+* Vegetarian or non-vegetarian food.
+* Regional preferences.
+* Religious or cultural requirements.
+* Traditional or modern themes.
+* Indoor or outdoor venues.
+* Budget priorities.
+
+# 4. EVENT CATEGORIES
+
+Support these categories:
+
+1. Wedding and Engagement.
+2. Birthday.
+3. Anniversary.
+4. College Festival and Party.
+5. Corporate Event.
+6. Community Gathering and Religious Celebration.
+7. Other Custom Event.
+
+Each category should have appropriate AI planning instructions.
+
+Examples:
+
+Wedding:
+
+* Ceremony planning.
+* Venue.
+* Catering.
+* Photography.
+* Decoration.
+* Guest management.
+* Wedding-day schedule.
+
+Birthday:
+
+* Theme.
+* Cake.
+* Decoration.
+* Food.
+* Entertainment.
+* Games.
+* Photography.
+
+College Festival:
+
+* Stage setup.
+* Activities.
+* Permissions checklist.
+* Sponsorship planning.
+* Food stalls.
+* Volunteers.
+* Event schedule.
+
+Do not use one generic checklist for every event type.
+
+# 5. COMPLETE APPLICATION PAGES
+
+Implement the following pages and working navigation.
+
+## 5.1 Landing Page
+
+Create a premium SaaS landing page.
+
+Header:
+
+* Festivo AI logo.
+* Home.
+* Features.
+* How It Works.
+* About.
+* Get Started button.
+
+Hero section:
+
+Headline:
+"Your Celebration, Planned Smarter."
+
+Description:
+"Plan unforgettable celebrations with AI-powered ideas, smart budgets, organized timelines, and everything you need in one place."
+
+Buttons:
+
+* Plan My Event.
+* Explore Features.
+
+Include:
+
+* Beautiful event-themed visual composition.
+* Product dashboard preview.
+* Feature cards.
+* How-it-works section.
+* Supported event categories.
+* Budget planning preview.
+* AI assistant preview.
+* Footer.
+
+The landing page must have a complete visual design.
+
+Do not use generic placeholder illustrations or empty boxes.
+
+Use CSS-based visual elements, Lucide icons, gradients, and realistic application screenshots built from actual components.
+
+The Plan My Event button must navigate to event creation.
+
+## 5.2 Dashboard
+
+Create a complete event management dashboard.
+
+Sidebar navigation:
+
+* Dashboard.
+* My Events.
+* AI Planner.
+* Budget.
+* Tasks & Timeline.
+* Vendors.
+* Guest List.
+* Moodboards.
+* Event Schedule.
+* Settings.
+
+Dashboard header:
+
+* Greeting.
+* Current date.
+* Create Event button.
+
+Dashboard statistics:
+
+* Total Events.
+* Upcoming Events.
+* Total Planned Budget.
+* Pending Tasks.
+
+Main sections:
+
+* Upcoming Events.
+* Recent Events.
+* Budget Overview.
+* Task Progress.
+* Upcoming Deadlines.
+* Recent Activity.
+
+All dashboard statistics must come from actual saved application data.
+
+Do not hardcode dashboard numbers.
+
+Empty state:
+
+When the user has no events, display an attractive empty state.
+
+Include a clear CTA to create the first event.
+
+## 5.3 Event Creation Wizard
+
+Build a multi-step event creation experience.
+
+Step 1: Event Category.
+
+Step 2: Basic Information:
+
+* Event name.
+* Date.
+* City.
+* Location details.
+* Guest count.
+* Duration.
+* Indoor or outdoor.
+
+Step 3: Budget:
+
+* Total budget.
+* Budget flexibility.
+* Priority categories.
+* Emergency reserve preference.
+
+Step 4: Preferences:
+
+* Theme.
+* Preferred colors.
+* Food preferences.
+* Cultural preferences.
+* Event atmosphere.
+* Additional requirements.
+
+Step 5: Review.
+
+Step 6: Generate Event Plan.
+
+Requirements:
+
+* Progress indicator.
+* Previous and Next buttons.
+* Input validation.
+* Preserve entered data.
+* Show field-specific errors.
+* Prevent duplicate submissions.
+* Show AI loading animation.
+* Provide cancel and return functionality.
+
+The wizard must work without Gemini until the user requests AI generation.
+
+## 5.4 Event Overview
+
+After generating a plan, open a complete event workspace.
+
+Display:
+
+* Event name.
+* Event date.
+* Location.
+* Event type.
+* Guest count.
+* Budget.
+* Days remaining.
+* Planning progress.
+
+Provide navigation tabs:
+
+* Overview.
+* AI Planner.
+* Budget.
+* Tasks.
+* Vendors.
+* Guests.
+* Moodboard.
+* Schedule.
+
+Users must be able to switch between these sections without losing unsaved information.
+
+## 5.5 AI Event Planner
+
+This is the primary AI feature.
+
+Use Gemini to generate a complete event plan.
+
+Required output:
+
+A. Event Summary
+
+* Event concept.
+* Theme.
+* Description.
+* Main priorities.
+
+B. Budget Breakdown
+
+* Category.
+* Allocated amount.
+* Explanation.
+
+C. Preparation Tasks
+
+* Task title.
+* Description.
+* Priority.
+* Due date.
+* Category.
+
+D. Timeline
+
+* Planning stage.
+* Deadline.
+* Required activity.
+
+E. Vendor Checklist
+
+* Vendor category.
+* Purpose.
+* Suggested questions.
+
+F. Food Suggestions
+
+* Menu ideas.
+* Food preferences.
+* Budget-conscious alternatives.
+
+G. Decoration Ideas
+
+* Theme.
+* Colors.
+* Decoration concepts.
+* Lighting.
+* Venue styling.
+
+H. Event-Day Schedule
+
+* Time.
+* Activity.
+* Duration.
+
+I. Personalized Recommendations
+
+* Cost-saving opportunities.
+* Planning risks.
+* Important reminders.
+
+The generated result must be displayed in attractive, structured cards.
+
+Do not display raw JSON to the user.
+
+Allow users to regenerate individual sections without regenerating the entire event plan.
+
+## 5.6 Budget Management
+
+Create a functional budget planner.
+
+Summary cards:
+
+* Total Budget.
+* Planned Allocation.
+* Actual Expenses.
+* Remaining Budget.
+
+Display:
+
+* Category breakdown.
+* Budget progress chart.
+* Expense history.
+* Remaining balance.
+
+Expense management:
+
+Users can:
+
+* Add expenses.
+* Edit expenses.
+* Delete expenses.
+* Assign categories.
+* Enter amounts.
+* Add descriptions.
+* Add vendor names.
+* Set payment status.
+* Add notes.
+
+Payment status:
+
+* Paid.
+* Partially Paid.
+* Unpaid.
+
+Budget calculations must happen in TypeScript, not through Gemini.
+
+Formula:
+
+Total Expenses = Sum of actual expenses.
+
+Remaining Budget = Total Budget - Total Expenses.
+
+Budget Utilization = (Total Expenses / Total Budget) × 100.
+
+Handle zero budgets safely.
+
+Use Indian currency formatting.
+
+Show warning states when expenses exceed the budget.
+
+Allow AI to suggest budget adjustments, but never silently apply them.
+
+## 5.7 Task Manager
+
+Create a complete task management interface.
+
+Features:
+
+* Add task.
+* Edit task.
+* Delete task.
+* Mark completed.
+* Reopen task.
+* Change priority.
+* Change deadline.
+* Filter tasks.
+* Search tasks.
+* Sort by deadline.
+
+Priorities:
+
+* Low.
+* Medium.
+* High.
+* Urgent.
+
+Statuses:
+
+* Pending.
+* In Progress.
+* Completed.
+
+Provide:
+
+* List view.
+* Timeline view.
+* Progress indicator.
+* Overdue task warnings.
+* Upcoming task reminders inside the application.
+
+Task progress must be calculated from actual task records.
+
+## 5.8 Vendor Management
+
+Allow users to manage their own vendors.
+
+Vendor fields:
+
+* Name.
+* Service category.
+* Contact person.
+* Phone.
+* Email.
+* Quoted price.
+* Booking status.
+* Payment status.
+* Notes.
+
+Categories:
+
+* Venue.
+* Catering.
+* Photography.
+* Decoration.
+* Entertainment.
+* Florist.
+* Transportation.
+* Makeup.
+* Invitations.
+* Other.
+
+Booking statuses:
+
+* Researching.
+* Contacted.
+* Shortlisted.
+* Booked.
+* Cancelled.
+
+Features:
+
+* Add.
+* Edit.
+* Delete.
+* Search.
+* Filter.
+* Compare quotations.
+* Track booking status.
+
+Do not fabricate real vendors or business contact information.
+
+## 5.9 Guest Management
+
+Create a guest management system.
+
+Guest fields:
+
+* Name.
+* Phone.
+* Email.
+* Guest group.
+* Invitation status.
+* RSVP status.
+* Number of attendees.
+* Dietary preferences.
+* Notes.
+
+Features:
+
+* Add guest.
+* Edit guest.
+* Delete guest.
+* Search.
+* Filter.
+* Group guests.
+* Track invitations.
+* Track attendance.
+
+RSVP:
+
+* Awaiting Response.
+* Attending.
+* Not Attending.
+
+Display:
+
+* Total Invited.
+* Confirmed Attendees.
+* Pending Responses.
+* Declined Invitations.
+
+Support CSV export and import with validation.
+
+Do not implement automated messaging in this MVP.
+
+## 5.10 AI Moodboard
+
+Create a text-based moodboard system.
+
+No image-generation API is required.
+
+Moodboard components:
+
+* Theme title.
+* Theme description.
+* Primary color.
+* Secondary color.
+* Accent color.
+* Decoration concepts.
+* Lighting ideas.
+* Venue styling.
+* Table styling.
+* Affordable alternatives.
+
+Display color swatches with hexadecimal values.
+
+Allow:
+
+* Generate moodboard.
+* Edit.
+* Save.
+* Delete.
+* Regenerate.
+* Copy.
+
+Gemini must generate the moodboard content.
+
+Do not generate fake images or broken image placeholders.
+
+## 5.11 Event-Day Schedule
+
+Create an editable event schedule.
+
+Each activity contains:
+
+* Title.
+* Start time.
+* End time.
+* Description.
+* Notes.
+
+Features:
+
+* Add activity.
+* Edit activity.
+* Delete activity.
+* Reorder activities.
+* Identify overlapping activities.
+* Display chronological schedule.
+
+Allow Gemini to suggest a schedule based on event duration and event type.
+
+## 5.12 AI Chat Assistant
+
+Build a contextual AI assistant.
+
+The assistant must understand the currently selected event.
+
+Example requests:
+
+"Reduce my budget to ₹30,000."
+
+"Suggest a vegetarian food menu."
+
+"Change my decoration theme."
+
+"Add a photographer booking task."
+
+"Move the event schedule by 30 minutes."
+
+"Suggest cheaper alternatives."
+
+"Create a preparation checklist for the next 10 days."
+
+The assistant must return proposed changes in structured format.
+
+Change workflow:
+
+1. User submits a request.
+2. Gemini interprets it.
+3. Server validates the proposed changes.
+4. Frontend displays a comparison preview.
+5. User approves or rejects.
+6. Application applies approved changes.
+7. Local storage saves the result.
+
+Never allow AI to directly execute arbitrary code or modify unrestricted application state.
+
+If a proposed change is invalid, reject it and explain why.
+
+## 5.13 Settings
+
+Include:
+
+* Application information.
+* Currency preference.
+* Theme preference.
+* Data storage information.
+* Export all data.
+* Import data.
+* Clear application data.
+* Reset application.
+
+Provide confirmation dialogs for destructive actions.
+
+---
+
+# 6. DESIGN SYSTEM
+
+This is a HIGH-PRIORITY requirement.
+
+The previous implementation appeared as unstyled HTML.
+
+DO NOT repeat that mistake.
+
+The final application must look like a professionally designed SaaS product.
+
+## 6.1 Visual Direction
+
+Design style:
+
+Modern, elegant, premium, warm, and minimal.
+
+Use a combination of:
+
+* Clean dashboard layouts.
+* Rounded cards.
+* Subtle gradients.
+* Clear typography.
+* Consistent spacing.
+* Soft shadows.
+* Modern icons.
+* Attractive charts.
+* Smooth transitions.
+
+Avoid:
+
+* Default browser styling.
+* Unstyled buttons.
+* Excessive gradients.
+* Excessive glassmorphism.
+* Inconsistent spacing.
+* Oversized empty sections.
+* Random colors.
+* Unnecessary animations.
+
+## 6.2 Color Palette
+
+Primary:
+Deep Violet: #6C4AB6
+
+Secondary:
+Warm Coral: #FF7F6A
+
+Background:
+Soft Ivory: #FFFDF9
+
+Surface:
+White: #FFFFFF
+
+Main Text:
+#252336
+
+Secondary Text:
+#777482
+
+Success:
+#248A5A
+
+Warning:
+#D99020
+
+Error:
+#C74747
+
+Use consistent semantic colors.
+
+## 6.3 Typography
+
+Use a modern font such as Inter or Geist.
+
+Headings must have clear hierarchy.
+
+Body text must be readable.
+
+Use consistent font weights and line heights.
+
+## 6.4 Layout
+
+Desktop:
+
+* Sidebar width approximately 250px.
+* Main content with comfortable spacing.
+* Responsive grid layouts.
+* Dashboard cards.
+* Clear content hierarchy.
+
+Tablet:
+
+* Collapsible sidebar.
+* Flexible cards.
+* Reduced spacing.
+
+Mobile:
+
+* Mobile navigation.
+* Single-column layouts.
+* Full-width buttons.
+* Touch-friendly controls.
+* Responsive tables and forms.
+* No horizontal overflow.
+
+## 6.5 Icons
+
+Use Lucide React.
+
+Do not use random Unicode characters as icons.
+
+## 6.6 Animations
+
+Use subtle transitions.
+
+Examples:
+
+* Sidebar transitions.
+* Card hover effects.
+* Dialog animations.
+* Loading indicators.
+* AI generation progress.
+
+Avoid animation libraries unless needed.
+
+---
+
+# 7. TECHNICAL STACK
+
+Required:
+
+* Next.js with App Router.
+* TypeScript.
+* Tailwind CSS.
+* shadcn/ui.
+* Lucide React.
+* Google Gemini API.
+* Official Google GenAI SDK.
+* Zod.
+* Recharts.
+* Browser localStorage.
+
+Do not add unnecessary libraries.
+
+Do not use:
+
+* Express.js.
+* Separate backend servers.
+* Prisma.
+* PostgreSQL.
+* Supabase.
+* Firebase.
+* OpenAI.
+* Anthropic.
+* MCP.
+* Cloudinary.
+* External database services.
+
+Next.js handles both frontend and backend.
+
+---
+
+# 8. GEMINI API IMPLEMENTATION
+
+## 8.1 API Key
+
+Use:
+
+GEMINI_API_KEY=your_actual_key
+
+Store it in:
+
+.env.local
+
+Create:
+
+.env.example
+
+Never commit the real key.
+
+Never expose the key through NEXT_PUBLIC variables.
+
+## 8.2 Server-Side Integration
+
+Create:
+
+lib/ai/gemini.ts
+
+This file should initialize the official Google GenAI SDK.
+
+Create server endpoints:
+
+POST /api/ai/generate-plan
+
+POST /api/ai/chat
+
+POST /api/ai/generate-moodboard
+
+All endpoints must validate incoming data.
+
+All Gemini requests must happen on the server.
+
+## 8.3 Model Configuration
+
+Use a currently supported Gemini model available to the configured API key.
+
+Keep the model name in one centralized configuration variable.
+
+Do not scatter model identifiers throughout the project.
+
+Do not hardcode an outdated model name.
+
+## 8.4 Structured Responses
+
+Use Gemini structured output where supported.
+
+Validate responses using Zod.
+
+The application must reject invalid output.
+
+Generate IDs in application code.
+
+Convert dates into valid application date formats.
+
+Do not trust AI-generated financial calculations.
+
+## 8.5 Error Handling
+
+Handle:
+
+* Invalid API key.
+* Quota exhaustion.
+* Rate limiting.
+* Network errors.
+* Timeout.
+* Invalid output.
+* Empty response.
+
+Display useful error messages.
+
+Provide retry functionality.
+
+Preserve user inputs and saved data.
+
+If Gemini is unavailable, the rest of the website must continue working.
+
+---
+
+# 9. LOCAL DATA STORAGE
+
+No database.
+
+Implement a dedicated storage layer.
+
+File:
+
+lib/storage/local-storage.ts
+
+Use localStorage for persistence.
+
+Store:
+
+* Events.
+* Event plans.
+* Budgets.
+* Expenses.
+* Tasks.
+* Vendors.
+* Guests.
+* Moodboards.
+* Schedules.
+* User preferences.
+
+Use unique IDs.
+
+Use event-specific data structures.
+
+Create a versioned storage schema.
+
+Example:
+
+{
+"schemaVersion": 1,
+"events": [],
+"preferences": {}
+}
+
+Requirements:
+
+* Automatic saving.
+* Automatic restoration.
+* Safe parsing.
+* Error handling.
+* Storage size monitoring.
+* Data export.
+* Data import.
+* Reset functionality.
+
+Avoid accessing localStorage directly during server-side rendering.
+
+Use a proper client-side hydration strategy.
+
+Handle browser storage quota errors.
+
+Do not store API keys or authentication secrets.
+
+Provide a JSON backup and restore system.
+
+---
+
+# 10. FUNCTIONAL REQUIREMENTS
+
+The following rules are mandatory.
+
+1. Every button must perform its intended action.
+2. Every navigation link must open the correct page or section.
+3. Every form must validate input.
+4. Every dialog must open and close correctly.
+5. Every delete operation must have confirmation.
+6. Every generated plan must be editable.
+7. Every saved change must persist.
+8. Every dashboard statistic must use actual data.
+9. Every budget calculation must be accurate.
+10. Every task status must update correctly.
+11. Every AI modification must require approval.
+12. Every error must have a visible explanation.
+13. No fake API responses.
+14. No hardcoded dashboard data presented as real user data.
+15. No placeholder buttons.
+16. No broken navigation.
+17. No raw JSON displayed as the primary user interface.
+18. No fake vendor listings.
+19. No nonfunctional forms.
+20. No silent data loss.
+
+# 11. PROJECT STRUCTURE
+
+Use a clean, maintainable structure.
+
+app/
+layout.tsx
+page.tsx
+globals.css
+
+dashboard/
+page.tsx
+
+events/
+new/
+page.tsx
+[eventId]/
+page.tsx
+budget/
+page.tsx
+tasks/
+page.tsx
+vendors/
+page.tsx
+guests/
+page.tsx
+moodboard/
+page.tsx
+schedule/
+page.tsx
+
+api/
+ai/
+generate-plan/
+route.ts
+chat/
+route.ts
+generate-moodboard/
+route.ts
+
+components/
+layout/
+dashboard/
+events/
+planner/
+budget/
+tasks/
+vendors/
+guests/
+moodboard/
+schedule/
+chat/
+ui/
+
+lib/
+ai/
+gemini.ts
+prompts.ts
+schemas.ts
+
+storage/
+local-storage.ts
+export-import.ts
+
+calculations/
+budget.ts
+tasks.ts
+readiness.ts
+
+validation/
+schemas.ts
+
+utils.ts
+
+types/
+event.ts
+budget.ts
+task.ts
+vendor.ts
+guest.ts
+schedule.ts
+
+Create additional files when required.
+
+Do not put the entire application in one component.
+
+---
+
+# 12. DEVELOPMENT ORDER
+
+Implement the project in the following sequence.
+
+PHASE 1: FOUNDATION
+
+* Inspect existing repository.
+* Fix existing dependency errors.
+* Fix Tailwind configuration.
+* Fix global CSS imports.
+* Establish the design system.
+* Create reusable components.
+* Build application layout.
+* Build landing page.
+* Build responsive sidebar and mobile navigation.
+
+PHASE 2: LOCAL APPLICATION
+
+* Implement event models.
+* Implement localStorage.
+* Build event creation wizard.
+* Build dashboard.
+* Build event overview.
+* Implement event editing and deletion.
+* Implement export and import.
+
+PHASE 3: GEMINI INTEGRATION
+
+* Configure Gemini SDK.
+* Add environment variable support.
+* Build server API routes.
+* Implement structured generation.
+* Implement validation.
+* Build AI loading states.
+* Implement error handling.
+* Display generated plans.
+
+PHASE 4: EVENT MANAGEMENT
+
+* Budget planner.
+* Expense tracker.
+* Task manager.
+* Timeline.
+* Vendor organizer.
+* Guest manager.
+* Moodboards.
+* Event-day schedule.
+
+PHASE 5: AI CHAT
+
+* Contextual conversation.
+* Structured change proposals.
+* Preview interface.
+* Approve and reject actions.
+* State validation.
+* Local persistence.
+
+PHASE 6: QUALITY ASSURANCE
+
+* Test all workflows.
+* Fix broken styling.
+* Test responsive behavior.
+* Test API failures.
+* Test local storage.
+* Test budget calculations.
+* Test import/export.
+* Fix console errors.
+* Fix TypeScript errors.
+* Run production build.
+
+---
+
+# 13. TESTING REQUIREMENTS
+
+Test the following scenarios.
+
+Scenario 1:
+Create a birthday event with ₹20,000 budget and 40 guests.
+
+Expected:
+Gemini generates a birthday-specific plan with budget, tasks, theme, and schedule.
+
+Scenario 2:
+Refresh the browser.
+
+Expected:
+The event remains available.
+
+Scenario 3:
+Add an expense of ₹5,000.
+
+Expected:
+Actual expenses increase by ₹5,000 and remaining budget updates correctly.
+
+Scenario 4:
+Mark three tasks completed.
+
+Expected:
+Task progress updates correctly.
+
+Scenario 5:
+Ask AI to reduce the budget.
+
+Expected:
+A proposed change appears before application.
+
+Scenario 6:
+Reject the proposed change.
+
+Expected:
+Existing event data remains unchanged.
+
+Scenario 7:
+Remove the Gemini API key.
+
+Expected:
+The application still works for manual event management. AI features show a configuration message.
+
+Scenario 8:
+Enter an invalid API key.
+
+Expected:
+AI generation displays an understandable error without losing form data.
+
+Scenario 9:
+Export event data.
+
+Expected:
+A valid JSON file downloads.
+
+Scenario 10:
+Import the exported JSON.
+
+Expected:
+The event is restored successfully.
+
+Scenario 11:
+Open the application on mobile.
+
+Expected:
+Navigation, forms, cards, and event management remain usable.
+
+Scenario 12:
+Run a production build.
+
+Expected:
+No TypeScript errors, missing modules, or build-breaking issues.
+
+---
+
+# 14. FINAL QUALITY REQUIREMENTS
+
+Before declaring the project complete:
+
+* Run the development server.
+* Open the actual website.
+* Inspect every primary page.
+* Verify Tailwind styles load correctly.
+* Verify buttons work.
+* Verify navigation works.
+* Verify local persistence.
+* Verify Gemini integration.
+* Verify all main user workflows.
+* Check mobile responsiveness.
+* Run linting.
+* Run TypeScript checks.
+* Run the production build.
+
+Do not report completion simply because files have been created.
+
+Completion requires a working application.
+
+If a feature cannot be completed, explain the exact limitation instead of presenting a nonfunctional placeholder.
+
+Do not leave TODO buttons or fake interactions.
+
+---
+
+# 15. DEFINITION OF DONE
+
+Festivo AI is complete when a user can:
+
+1. Open the website without creating an account.
+2. Create an event.
+3. Enter event details and budget.
+4. Generate a personalized plan using Gemini.
+5. View and edit the generated plan.
+6. Manage expenses and budgets.
+7. Manage preparation tasks.
+8. Track deadlines.
+9. Manage vendors.
+10. Manage guests.
+11. Create text-based moodboards.
+12. Manage event-day schedules.
+13. Chat with an event-specific AI assistant.
+14. Preview AI changes.
+15. Approve or reject proposed changes.
+16. Save events automatically.
+17. Refresh the browser without losing data.
+18. Export and import event data.
+19. Use the application on mobile and desktop.
+
+The only required external API key must be GEMINI_API_KEY.
+
+The application must not depend on a database or external service to perform its core planning and management functions.
+
+FINAL INSTRUCTION:
+
+Build Festivo AI as a complete, polished, working web application.
+
+Prioritize functionality, design quality, reliability, and a smooth user experience.
+
+Do not stop after creating the landing page.
+
+Do not stop after creating the dashboard.
+
+Continue implementing and testing until all MVP requirements are satisfied.
